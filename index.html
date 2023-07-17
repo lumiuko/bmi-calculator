@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Body Mass Index Calculator</title>
+  </head>
+  <body class="text-dark-electric-blue text-body-m leading-body">
+    <header class="px-6 pt-8 relative before:absolute before:top-0 before:left-0 before:h-[640px] before:w-full before:bg-gradient before:-z-10 before:rounded-header md:px-10 xl:pt-[4.75rem] xl:before:w-[68%] xl:before:h-[737px] xl:before:left-6">
+      <div class="max-w-[1160px] mx-auto flex flex-col items-center xl:items-start">
+        <img src="/logo.svg" class="w-[40px] xl:w-[64px]" alt="Logo" />
+        <div class="mt-6 flex flex-col gap-12 md:gap-10 md:mt-10 xl:mt-11 xl:flex-row xl:items-start xl:gap-8">
+          <div class="text-center xl:text-left xl:max-w-[564px] xl:w-full xl:mt-[6.25rem]">
+            <h1 class="font-semibold text-l tracking-l text-gunmetal leading-heading xl:text-xl xl:tracking-xl">Body Mass <span class="block">Index Calculator</span></h1>
+            <p class="mt-6 xl:mt-9 xl:max-w-[465px]">Better understand your weight in relation to your height using our body mass index (BM) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and well-being.</p>
+          </div>
+          <form id="form" autocomplete="off" class="p-6 bg-white rounded-default shadow-default md:p-8">
+            <h2 class="text-m tracking-m leading-heading font-semibold text-gunmetal -tracking-wide">Enter your details below</h2>
+            <div class="mt-6 flex items-center gap-6 text-gunmetal font-semibold md:mt-8">
+              <label class="flex-grow relative flex items-center">
+                <input type="radio" checked name="units" data-value="metric" id="metric" class="peer absolute w-0 h-0 opacity-0" />
+                <span class="relative cursor-pointer top-0 left-0 h-[32px] w-[32px] rounded-full border-[1px] border-borders peer-checked:bg-[#e1e7fe] peer-checked:before:opacity-100 before:opacity-0 before:w-[15px] before:h-[15px] before:absolute before:top-[8px] before:left-[8px] before:bg-blue before:rounded-full hover:border-blue transition-colors before:transition-opacity"></span>
+                <span class="ml-[1.125rem]">Metric</span>
+              </label>
+              <label class="flex-grow relative flex items-center">
+                <input type="radio" name="units" data-value="imperial" id="imperial" class="peer absolute w-0 h-0 opacity-0" />
+                <span class="relative cursor-pointer top-0 left-0 h-[32px] w-[32px] rounded-full border-[1px] border-borders peer-checked:bg-[#e1e7fe] peer-checked:before:opacity-100 before:opacity-0 before:w-[15px] before:h-[15px] before:absolute before:top-[8px] before:left-[8px] before:bg-blue before:rounded-full hover:border-blue transition-colors before:transition-opacity"></span>
+                <span class="ml-[1.125rem]">Imperial</span>
+              </label>
+            </div>
+            <div id="metric-inputs">
+              <div class="mt-6 flex flex-col items-end gap-4 text-body-s md:flex-row md:mt-8 md:gap-6">
+                <div class="w-full">
+                  <label for="height-cm">Height</label>
+                  <div class="relative">
+                    <input type="text" id="height-cm" placeholder="0" class="mt-2 w-full rounded-md border-[1px] border-borders px-6 py-5 text-m tracking-m leading-heading font-semibold text-gunmetal focus:outline-blue placeholder:text-placeholder" />
+                    <span class="absolute right-6 top-[38%] text-m tracking-m text-blue leading-heading font-semibold">cm</span>
+                  </div>
+                </div>
+                <div class="w-full">
+                  <label for="weight-kg">Weight</label>
+                  <div class="relative">
+                    <input type="text" id="weight-kg" placeholder="0" class="mt-2 w-full rounded-md border-[1px] border-borders px-6 py-5 text-m tracking-m leading-heading font-semibold text-gunmetal focus:outline-blue placeholder:text-placeholder" />
+                    <span class="absolute right-6 top-[38%] text-m tracking-m text-blue leading-heading font-semibold">kg</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="imperial-inputs" class="hidden">
+              <div class="mt-6 flex flex-col items-end gap-4 text-body-s md:flex-row md:mt-8 md:gap-6">
+                <div class="w-full">
+                  <label for="height-ft">Height</label>
+                  <div class="relative">
+                    <input type="text" id="height-ft" placeholder="0" class="mt-2 w-full rounded-md border-[1px] border-borders px-6 py-5 text-m tracking-m leading-heading font-semibold text-gunmetal focus:outline-blue placeholder:text-placeholder" />
+                    <span class="absolute right-6 top-[38%] text-m tracking-m text-blue leading-heading font-semibold">ft</span>
+                  </div>
+                </div>
+                <div class="w-full relative">
+                  <input type="text" id="height-in" placeholder="0" class="mt-2 w-full rounded-md border-[1px] border-borders px-6 py-5 text-m tracking-m leading-heading font-semibold text-gunmetal focus:outline-blue placeholder:text-placeholder" />
+                  <span class="absolute right-6 top-[38%] text-m tracking-m text-blue leading-heading font-semibold">in</span>
+                </div>
+              </div>
+              <div class="mt-6 flex flex-col items-end gap-4 text-body-s md:flex-row md:mt-8 md:gap-6">
+                <div class="w-full">
+                  <label for="weight-st">Weight</label>
+                  <div class="relative">
+                    <input type="text" id="weight-st" placeholder="0" class="mt-2 w-full rounded-md border-[1px] border-borders px-6 py-5 text-m tracking-m leading-heading font-semibold text-gunmetal focus:outline-blue placeholder:text-placeholder" />
+                    <span class="absolute right-6 top-[38%] text-m tracking-m text-blue leading-heading font-semibold">st</span>
+                  </div>
+                </div>
+                <div class="w-full relative">
+                  <input type="text" id="weight-lbs" placeholder="0" class="mt-2 w-full rounded-md border-[1px] border-borders px-6 py-5 text-m tracking-m leading-heading font-semibold text-gunmetal focus:outline-blue placeholder:text-placeholder" />
+                  <span class="absolute right-6 top-[38%] text-m tracking-m text-blue leading-heading font-semibold">lbs</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 bg-result-gradient rounded-default p-8 text-white md:mt-8 md:rounded-result">
+              <div class="flex flex-col gap-4" id="result-introduction">
+                <p class="text-m tracking-m leading-heading font-semibold">Welcome!</p>
+                <p class="text-body-s">Enter your height and weight and you’ll see your BMI result here</p>
+              </div>
+              <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-6 visually-hidden" id="result-ready-values">
+                <div class="flex-1">
+                  <p>Your BMI is...</p>
+                  <p class="mt-2 text-l leading-heading tracking-l font-semibold xl:text-xl xl:tracking-xl" id="result-value">23.4</p>
+                </div>
+                <p class="flex-1 text-body-s">Your BMI suggests you’re <span id="result-text"></span>. Your ideal weight is between <span class="font-semibold" id="result-range"></span>.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main class="xl:px-6">
+      <section class="pt-[4.5rem] md:pt-24 xl:pt-[10.75rem]">
+        <div class="max-w-[1160px] mx-auto flex flex-col gap-12 md:flex-row md:items-center md:gap-[4.75rem] xl:justify-between xl:relative xl:after:absolute xl:after:right-7 xl:after:top-[-3.25rem] xl:after:bg-pattern-line-left xl:after:w-[85px] xl:after:h-[200px] xl:after:bg-contain">
+          <img src="/image-man-eating.webp" class="md:max-w-[435px] md:ml-[-7.25rem] xl:max-w-[564px] xl:ml-0" alt="Man eating" />
+          <div class="px-6 md:px-0 md:pr-11 xl:pr-0 xl:max-w-[465px] xl:self-end xl:mb-10">
+            <h2 class="text-[2rem] leading-heading tracking-tight font-semibold text-gunmetal xl:text-l xl:tracking-l">What your BMI result means</h2>
+            <p class="mt-8 xl:mt-9">A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight may lower your chances of experiencing health issues later on, such as obesity and type 2 diabetes. Aim for a nutritious diet with reduced fat and sugar content, incorporating ample fruits and vegetables. Additionally, strive for regular physical activity, ideally about 30 minutes daily for five days a week.</p>
+          </div>
+        </div>
+      </section>
+      <section class="mt-[4.5rem] px-6 py-14 bg-gradient-cards md:mt-24 md:px-10 md:py-[3.75rem] xl:pt-[4.5rem] xl:pb-24 xl:rounded-[35px]">
+        <div class="max-w-[1160px] mx-auto flex flex-col gap-10 xl:flex-row xl:gap-8">
+          <div class="grid md:grid-cols-[64px_auto] md:items-center md:gap-x-10 xl:grid-cols-1 xl:flex-1">
+            <img src="/icon-eating.svg" class="md:row-span-2 xl:row-auto" alt="Healty eating" />
+            <h2 class="mt-8 text-m tracking-m text-gunmetal leading-heading font-semibold md:mt-0 xl:mt-[2.875rem]">Healthy eating</h2>
+            <p class="mt-6">Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood.</p>
+          </div>
+          <div class="grid md:grid-cols-[64px_auto] md:items-center md:gap-x-10 xl:grid-cols-1 xl:flex-1">
+            <img src="/icon-exercise.svg" class="md:row-span-2 xl:row-auto" alt="Regular exercise" />
+            <h2 class="mt-8 text-m tracking-m text-gunmetal leading-heading font-semibold md:mt-0 xl:mt-[2.875rem]">Regular exercise</h2>
+            <p class="mt-6">Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity.</p>
+          </div>
+          <div class="grid md:grid-cols-[64px_auto] md:items-center md:gap-x-10 xl:grid-cols-1 xl:flex-1">
+            <img src="/icon-sleep.svg" class="md:row-span-2 xl:row-auto" alt="Adequate sleep" />
+            <h2 class="mt-8 text-m tracking-m text-gunmetal leading-heading font-semibold md:mt-0 xl:mt-[2.875rem]">Adequate sleep</h2>
+            <p class="mt-6">Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation.</p>
+          </div>
+        </div>
+      </section>
+      <section class="px-6 pt-[4.5rem] pb-24 md:pt-24 md:px-10 xl:py-[7.5rem]">
+        <div class="max-w-[1160px] mx-auto relative xl:before:absolute xl:before:w-[94px] xl:before:h-[122px] xl:before:top-[250px] xl:before:left-[165px] xl:before:bg-pattern-line-right xl:before:bg-contain">
+          <div class="text-center xl:text-left xl:max-w-[564px]">
+            <h2 class="font-semibold text-[2rem] leading-heading text-gunmetal xl:text-l xl:tracking-l">Limitations of BMI</h2>
+            <p class="mt-8 xl:mt-9">Although BMI is often a practical indicator of healthy weight, it is not suited for every person. Specific groups should carefully consider their BMI outcomes, and in certain cases, the measurement may not be beneficial to use.</p>
+          </div>
+          <div class="mt-14 grid gap-y-4 md:gap-x-4 md:grid-cols-2 xl:grid-cols-cards xl:justify-end xl:mt-[-11.5rem] xl:gap-8">
+            <div class="relative shadow-default p-6 rounded-default bg-white md:p-8 xl:col-span-2 xl:max-w-[365px] xl:justify-self-end xl:translate-x-[-6.25rem]">
+              <div class="flex items-center">
+                <img src="/icon-gender.svg" alt="Gender icon" />
+                <span class="ml-4 text-s tracking-s leading-heading text-gunmetal font-semibold">Gender</span>
+              </div>
+              <p class="mt-4">The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI.</p>
+            </div>
+            <div class="relative shadow-default p-6 rounded-default bg-white md:p-8">
+              <div class="flex items-center">
+                <img src="/icon-age.svg" alt="Age icon" />
+                <span class="ml-4 text-s tracking-s leading-heading text-gunmetal font-semibold">Age</span>
+              </div>
+              <p class="mt-4">In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content.</p>
+            </div>
+            <div class="relative shadow-default p-6 rounded-default bg-white md:p-8">
+              <div class="flex items-center">
+                <img src="/icon-muscle.svg" alt="Muscle icon" />
+                <span class="ml-4 text-s tracking-s leading-heading text-gunmetal font-semibold">Muscle</span>
+              </div>
+              <p class="mt-4">BMI may misclassify muscular individuals as overweight or obese, as it doesn't differentiate muscle from fat.</p>
+            </div>
+            <div class="relative shadow-default p-6 rounded-default bg-white md:p-8 xl:translate-x-[-12.5rem] xl:-translate-y-2">
+              <div class="flex items-center">
+                <img src="/icon-pregnancy.svg" alt="Pregnancy icon" />
+                <span class="ml-4 text-s tracking-s leading-heading text-gunmetal font-semibold">Pregnancy</span>
+              </div>
+              <p class="mt-4">Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy pre-pregnancy BMI is advisable to minimise health risks for both mother and child.</p>
+            </div>
+            <div class="relative shadow-default p-6 rounded-default bg-white md:p-8 md:col-span-2 md:max-w-[365px] md:justify-self-center xl:col-auto xl:max-w-none xl:translate-x-[-12.5rem] xl:-translate-y-2">
+              <div class="flex items-center">
+                <img src="/icon-race.svg" alt="Race icon" />
+                <span class="ml-4 text-s tracking-s leading-heading text-gunmetal font-semibold">Race</span>
+              </div>
+              <p class="mt-4">Certain health concerns may affect individuals of some Black and Asian origins at lower BMIs than others. To learn more, it is advised to discuss this with your GP or practice nurse.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

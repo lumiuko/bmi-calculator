@@ -26,12 +26,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://i.imgur.com/ArLMr50.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/body-mass-index-calculator-using-tailwind-css-pCfUzNOmlC](https://www.frontendmentor.io/solutions/body-mass-index-calculator-using-tailwind-css-pCfUzNOmlC)
+- Live Site URL: [https://bmi-calculator-page.netlify.app/](https://bmi-calculator-page.netlify.app/)
 
 ## My process
 
@@ -42,7 +42,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [Styled Components](https://styled-components.com/) - For styles
+- [Tailwind CSS](https://tailwindcss.com/) - For styles
 
 ## Author
 
